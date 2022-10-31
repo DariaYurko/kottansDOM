@@ -1,13 +1,22 @@
+
 const familyItems = document.querySelectorAll(".menu-family__item");
-console.log(familyItems)
-
 const lordsLits = document.querySelectorAll(".lords__list");
-console.log(lordsLits)
 
+const lordsNames = document.querySelectorAll(".lords__link")
+const lordInfo = document.querySelectorAll(".lord")
+
+familyItems.forEach(function(item) {
+
+// ------------------ Содержит ли фамилия активный класс---------------------------------
+   if (item.classList.contains("active")) {
+      let itemIsActive = item
+      let activeId = itemIsActive.getAttribute("data-family")
+      let activeLordsList = document.querySelector(activeId)
+      activeLordsList.classList.add("active")
+   }
 
 // --------------------Событие при клике на меню фамилии ---------------------------------
-familyItems.forEach(function(item) {
-   item.addEventListener("click", function () {
+   item.addEventListener("click", function (event) {
       event.preventDefault();
 
       let currentFamilyItem = item;
@@ -16,9 +25,9 @@ familyItems.forEach(function(item) {
 
       if (!currentFamilyItem.classList.contains("active")) {
 
-         familyItems.forEach(function(familyItem) {
-            if(familyItem.classList.contains("active")) {
-               familyItem.classList.remove("active")
+         familyItems.forEach(function(i) {
+            if(i.classList.contains("active")) {
+               i.classList.remove("active")
             }
          });
          currentFamilyItem.classList.add("active");
@@ -29,22 +38,22 @@ familyItems.forEach(function(item) {
             }
          });
          curentLordsList.classList.add("active");
+
+         lordInfo.forEach(function(i) {
+            if (i.classList.contains("active")) {
+               i.classList.remove("active")
+            }
+         })
       }
-
    })
+// ---------------------------------------------------------------------------------------
 })
-// ---------------------------------------------------------
 
-
-const lordsNames = document.querySelectorAll(".lords__link")
-console.log(lordsNames)
-
-const lordInfo = document.querySelectorAll(".lord")
-console.log(lordInfo)
 
 lordsNames.forEach(function(name) {
-   name.addEventListener("click", function() {
-      event.preventDefault();
+// ------------------------Событие при клике на меню имя --------------------------------------
+   name.addEventListener("click", function(e) {
+      e.preventDefault();
 
       let currentName = name;
       let nameId = currentName.getAttribute("data-name");
@@ -66,6 +75,6 @@ lordsNames.forEach(function(name) {
          })
          currentLordInfo.classList.add("active")
       }
-
    })
+// ---------------------------------------------------------------------------
 })
