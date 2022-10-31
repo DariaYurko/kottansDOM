@@ -5,14 +5,171 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Dom</title>
    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
    <div class="wrapper">
-      <header class="header"></header>
-      <main class="main__container"></main>
+      <header class="header">
+         <div class="header__container">
+            <a href="index.html" class="header__logo logo">
+               <img class="logo__img"  src="images/pngwing.com.png" alt="">
+            </a>
+            <nav class="header__menu menu-family">
+               <a href="" class="menu-family__item" data-family="#targarians">Таргарианы</a>
+               <a href="" class="menu-family__item" data-family="#lannisters">Ланистеры</a>
+               <a href="" class="menu-family__item" data-family="#baratheons">Баратеоны</a>
+               <a href="" class="menu-family__item" data-family="#starks">Старки</a>
+               <a href="" class="menu-family__item" data-family="#greyjoy">Грейджой</a>
+            </nav>
+         </div>
+      </header>
+
+      <main class="main">
+         <div class="main__container">
+
+            <section class="main__lords lords">
+
+               <nav class="lords__names">
+
+                  <ul class="lords__list" id="targarians">
+                     <li class="lords__name">
+                        <a href="" class="lords__link" data-name="#daenerys">Дейенерис</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link" data-name="#viserys">Визерис</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link" data-name="#rhaegar">Рейгар</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link" data-name="#aerys">Эерис</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link" data-name="#rhaenyra">Рейнира</a>
+                     </li>
+                  </ul>
+
+                  <ul class="lords__list" id="lannisters">
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Серсея</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Джейме</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Тирион</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Тайвин</a>
+                     </li>
+                  </ul>
+
+                  <ul class="lords__list" id="baratheons">
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Роберт</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Джофри</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Томен</a>
+                     </li>
+                  </ul>
+
+                  <ul class="lords__list" id="starks">
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Эддар</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Роб</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Бран</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Бран</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Санса</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Арья</a>
+                     </li>
+                  </ul>
+
+                  <ul class="lords__list" id="greyjoy">
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Бейлон</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Теон</a>
+                     </li>
+                     <li class="lords__name">
+                        <a href="" class="lords__link">Яра</a>
+                     </li>
+                  </ul>
+               </nav>
+
+               <div class="lords__content">
+
+                  <div class="lords__info lord" id="daenerys">
+                     <div class="lord__text-block">
+                        <h2 class="lord__title">Дейенерис Таргариен</h2>
+                        <p class="lord__text">Дейенерис Таргариен — одна из важнейших среди персонажей, от лица которых ведётся повествование, хотя её главы географически оторваны от всех остальных: на протяжении всего действия книг она путешествует по странам Востока, пытаясь найти себе союзников, вернуться в Семь Королевств и отвоевать Железный Трон. Не фигурирует только в романе «Пир стервятников». В конце первой книги она становится Матерью драконов — хозяйкой трёх вылупившихся из яиц драконов: Дрогона, Рейгаля и Визериона.</p>
+                     </div>
+                     <div class="lord__image">
+                        <img src="images/main/lords/targarians/Dayneris.jfif" alt="" class="lord__img">
+                     </div>
+                  </div>
+
+                  <div class="lords__info lord" id="viserys">
+                     <div class="lord__text-block">
+                        <h2 class="lord__title">Визерис Таргариен</h2>
+                        <p class="lord__text">Визерис Таргариен — одна из важнейших среди персонажей, от лица которых ведётся повествование, хотя её главы географически оторваны от всех остальных: на протяжении всего действия книг она путешествует по странам Востока, пытаясь найти себе союзников, вернуться в Семь Королевств и отвоевать Железный Трон. Не фигурирует только в романе «Пир стервятников». В конце первой книги она становится Матерью драконов — хозяйкой трёх вылупившихся из яиц драконов: Дрогона, Рейгаля и Визериона.</p>
+                     </div>
+                     <div class="lord__image">
+                        <img src="images/main/lords/targarians" alt="" class="lord__img">
+                     </div>
+                  </div>
+
+                  <div class="lords__info lord" id="rhaegar">
+                     <div class="lord__text-block">
+                        <h2 class="lord__title">Рейгар Таргариен</h2>
+                        <p class="lord__text">Рейгар одна из важнейших среди персонажей, от лица которых ведётся повествование, хотя её главы географически оторваны от всех остальных: на протяжении всего действия книг она путешествует по странам Востока, пытаясь найти себе союзников, вернуться в Семь Королевств и отвоевать Железный Трон. Не фигурирует только в романе «Пир стервятников». В конце первой книги она становится Матерью драконов — хозяйкой трёх вылупившихся из яиц драконов: Дрогона, Рейгаля и Визериона.</p>
+                     </div>
+                     <div class="lord__image">
+                        <img src="images/main/lords/targarians" alt="" class="lord__img">
+                     </div>
+                  </div>
+
+                  <div class="lords__info lord" id="aerys">
+                     <div class="lord__text-block">
+                        <h2 class="lord__title">Эйрис II Таргариен Безумный Король</h2>
+                        <p class="lord__text">Эйерис II Таргариен (другой вариант написания имени — Эйрис) по прозвищу Безумный король — персонаж вымышленного мира, изображённого в серии книг «Песнь льда и огня» Джорджа Мартина и в телесериале «Игра престолов», последний король Вестероса из династии Таргариенов. Сошёл с ума и своими репрессиями против «великих домов» спровоцировал восстание. Был убит Джейме Ланнистером, после чего Железный трон занял Роберт Баратеон. Детьми Эйериса были наследный принц Рейегар и Дейенерис Бурерождённая.</p>
+                     </div>
+                     <div class="lord__image">
+                        <img src="images/main/lords/targarians/aerys.jpg" alt="" class="lord__img">
+                     </div>
+                  </div>
+
+                  <div class="lords__info lord" id="rhaenyra">
+                     <div class="lord__text-block">
+                        <h2 class="lord__title">Рейнира Таргариен Безумный Король</h2>
+                        <p class="lord__text">Рейнира Таргариен (другой вариант написания имени — Эйрис) по прозвищу Безумный король — персонаж вымышленного мира, изображённого в серии книг «Песнь льда и огня» Джорджа Мартина и в телесериале «Игра престолов», последний король Вестероса из династии Таргариенов. Сошёл с ума и своими репрессиями против «великих домов» спровоцировал восстание. Был убит Джейме Ланнистером, после чего Железный трон занял Роберт Баратеон. Детьми Эйериса были наследный принц Рейегар и Дейенерис Бурерождённая.</p>
+                     </div>
+                     <div class="lord__image">
+                        <img src="images/main/lords/targarians" alt="rhaenyra" class="lord__img">
+                     </div>
+                  </div>
+
+               </div>
+
+            </section>
+
+         </div>
+      </main>
       <footer class="footer"></footer>
    </div>
    <script src="js/maincode.js"></script>

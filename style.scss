@@ -47,15 +47,167 @@ html {
 }
 
 [class*="__container"] {
-   max-width: 1400px;
+   max-width: 1370px;
+   padding: 0 15px;
    margin: 0 auto;
 }
 
 .wrapper {
    min-height: 100%;
    overflow: hidden;
+   display: flex;
+   flex-direction: column;
 }
 // =====================================================================
 
 
+body {
+   color: #ffd700;
+   background: black url(../images/thron.jpg) center / cover no-repeat;
+   line-height: 1.5;
+}
+a {
+   color: inherit;
+}
+.header {
+   padding: 20px 0;
+   border-bottom: 1px solid #ffd90091;
+   // .header__container
 
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   // .header__logo
+
+   &__logo {
+      flex: 0 1 100px;
+      height: 50px;
+   }
+
+   &__menu{}
+}
+
+.logo {
+   display: block;
+
+
+   &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+.menu-family {
+   display: flex;
+   column-gap: 30px;
+
+   // .menu-family__item
+   &__item{
+
+   }
+   // .menu-family__item
+   &__item.active{
+      color: red;
+   }
+}
+
+
+// =================================================================================
+
+
+.main {
+   background-color: rgba(0, 0, 0, 0.574);
+   flex: 1 1 auto;
+
+   // .main__container
+   &__container {
+   }
+
+   // .main__lords
+   &__lords {
+   }
+}
+
+.lords {
+   padding: 20px 0;
+   display: flex;
+
+   // .lords__names
+   &__names {
+      flex: 0 1 20%;
+   }
+
+   // .lords__list
+
+   &__list {
+      display: none;
+
+      &.active {
+         display: block;
+      }
+   }
+
+   // .lords__name
+
+   &__name {
+   }
+
+   // .lords__link
+
+   &__link {
+      &.active {
+         color: red;
+      }
+   }
+
+   // .lords__content
+
+   &__content {
+      flex: 1 1 80%;
+   }
+
+   // .lords__info
+
+   &__info {
+   }
+
+}
+
+
+.lord {
+   display: none;
+
+   &.active {
+      display: block;
+   }
+
+   // .lord__text-block
+
+   &__text-block {
+   }
+
+   // .lord__title
+
+   &__title {
+      font-size: 30px;
+   }
+
+   // .lord__text
+
+   &__text {
+   }
+
+   // .lord__image
+
+   &__image {
+   }
+
+   // .lord__img
+
+   &__img {
+   }
+}

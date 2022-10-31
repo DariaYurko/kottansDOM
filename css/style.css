@@ -46,11 +46,113 @@ html {
 }
 
 [class*=__container] {
-  max-width: 1400px;
+  max-width: 1370px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
 .wrapper {
   min-height: 100%;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body {
+  color: #ffd700;
+  background: black url(../images/thron.jpg) center/cover no-repeat;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.header {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 217, 0, 0.568627451);
+}
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__logo {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100px;
+          flex: 0 1 100px;
+  height: 50px;
+}
+.logo {
+  display: block;
+}
+.logo__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.menu-family {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+.menu-family__item.active {
+  color: red;
+}
+
+.main {
+  background-color: rgba(0, 0, 0, 0.574);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+.lords {
+  padding: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.lords__names {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+}
+.lords__list {
+  display: none;
+}
+.lords__list.active {
+  display: block;
+}
+.lords__link.active {
+  color: red;
+}
+.lords__content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 80%;
+          flex: 1 1 80%;
+}
+.lord {
+  display: none;
+}
+.lord.active {
+  display: block;
+}
+.lord__title {
+  font-size: 30px;
 }
