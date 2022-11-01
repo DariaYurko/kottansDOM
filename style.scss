@@ -49,8 +49,8 @@ html {
 }
 
 [class*="__container"] {
-   max-width: 1370px;
-   padding: 0 15px;
+   max-width: 100%;
+   padding: 0 50px;
    margin: 0 auto;
 }
 
@@ -69,9 +69,11 @@ body {
    background: black url(../images/thron.jpg) center / cover no-repeat;
    line-height: 1.5;
 }
+
 a {
    color: inherit;
 }
+
 .header {
    padding: 20px 0;
    border-bottom: 1px solid #ffd90091;
@@ -82,9 +84,10 @@ a {
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      row-gap: 10px;
+      gap: 15px;
 
       @media (max-width: 767.98px) {
+         padding: 0 15px;
          justify-content: center;
       }
    }
@@ -100,6 +103,11 @@ a {
 }
 
 .logo {
+   transition: 0.3s ease;
+   &:hover {
+
+      transform: scale(1.2);
+   }
 
    &__img {
       width: 100px;
@@ -155,10 +163,15 @@ a {
 
    // .main__container
    &__container {
+
+      @media (max-width: 767.98px) {
+         padding: 0 15px;
+      }
    }
 
    // .main__lords
    &__lords {
+
    }
 }
 
@@ -166,10 +179,19 @@ a {
    padding: 20px 0;
    display: flex;
 
+   @media (max-width: 767.98px) {
+        flex-direction: column;
+   }
+
    // .lords__names
    &__names {
       flex: 0 1 20%;
-      
+
+      @media (max-width: 767.98px) {
+         align-self: center;
+         background-color: none;
+
+      }
    }
 
    // .lords__list
@@ -177,7 +199,15 @@ a {
       display: none;
 
       &.active {
-         display: block;
+         display: flex;
+         flex-direction: column;
+
+         @media (max-width: 767.98px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            column-gap: 20px;
+         }
       }
    }
 
@@ -186,6 +216,7 @@ a {
       text-transform: uppercase;
       box-shadow: 0px 0px 10px 0px #ffd90091;
       margin-bottom: 20px;
+      text-align: center;
   }
 
    // .lords__link
@@ -194,52 +225,74 @@ a {
       border: 2px solid transparent;
       padding: 10px 15px;
       font-size: 16px;
+      text-shadow: 1px 1px #000000;
 
       &:hover {
          border: 2px solid #ffd90091;
+         background-color: rgba(0, 0, 0, 0.619);
       }
 
       &.active {
          border: 2px solid #ffd90091;
-         border-radius: 3px;
+         background-color: rgba(0, 0, 0, 0.699);
       }
    }
 
    // .lords__content
-
    &__content {
       flex: 1 1 80%;
    }
 
    // .lords__info
-
    &__info {
+      display: none;
+
+      &.active {
+         display: block;
+      }
    }
 }
 
 
 .lord {
-   display: none;
-   padding-left: 20px;
+   display: flex;
+   margin: 0 -15px;
+   margin-left: 40px;
 
    &> *:not(:last-child) {
       margin-bottom: 30px;
    }
 
-   &.active {
-      display: block;
+   @media (max-width: 991.98px) {
+      flex-direction: column;
+      margin-left: 10px;
+   }
+   @media (max-width: 767.98px) {
+      margin: 0 0 30px 0;
    }
 
    // .lord__text-block
-
    &__text-block {
+      flex: 0 1 50%;
+      margin: 0 15px;
+
       &> *:not(:last-child) {
          margin-bottom: 30px;
+      }
+
+      @media (max-width: 991.98px) {
+         flex: 1 1 100%;
+      }
+      @media (max-width: 767.98px) {
+         margin: 0;
+
+         &> *:not(:last-child) {
+            margin-bottom: 15px;
+         }
       }
    }
 
    // .lord__title
-
    &__title {
       font-size: 30px;
    }
@@ -250,12 +303,32 @@ a {
    }
 
    // .lord__image
-
    &__image {
+      flex: 0 1 50%;
+      align-self: flex-start;
+      margin: 0 15px;
+      box-shadow: 0px 0px 5px 2px #ffd90091;
+      padding: 10px;
+
+      @media (max-width: 991px) {
+         width: 60%;
+         align-self: center;
+      }
+      @media (max-width: 424.98px) {
+         width: 100%;
+         margin: 0;
+      }
    }
 
    // .lord__img
-
    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+
+      border-radius: 2px;
+      box-shadow: 0px 0px 5px 1px black;
    }
+
 }

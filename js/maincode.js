@@ -3,7 +3,7 @@ const familyItems = document.querySelectorAll(".menu-family__item");
 const lordsLits = document.querySelectorAll(".lords__list");
 
 const lordsNames = document.querySelectorAll(".lords__link")
-const lordInfo = document.querySelectorAll(".lord")
+const lordInfo = document.querySelectorAll(".lords__info")
 
 familyItems.forEach(function(item) {
 
