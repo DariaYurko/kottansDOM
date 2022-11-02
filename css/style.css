@@ -3,7 +3,7 @@
 &display=swap
 &display=swap&subset=cyrillic-ext    -  если нужна кирилца
  */
-@import url("https://fonts.googleapis.com/css?family=EB+Garamond:regular,500,600,700,800,italic,500italic,600italic,700italic,800italic&display=swap&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=EB+Garamond:regular,500,700&display=swap&subset=cyrillic-ext");
 /* ====================== Обнуление ====================================== */
 *,
 *::before,
@@ -47,9 +47,9 @@ html {
 }
 
 [class*=__container] {
-  max-width: 100%;
-  padding: 0 50px;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .wrapper {
@@ -65,10 +65,11 @@ html {
 }
 
 body {
-  color: rgba(255, 217, 0, 0.8823529412);
+  color: #f3b824;
+  line-height: 1.5;
   font-family: "EB Garamond", Arial, Helvetica, sans-serif;
   background: black url(../images/thron.jpg) center/cover no-repeat;
-  line-height: 1.5;
+  text-shadow: -2px -1px #000000;
 }
 
 a {
@@ -91,7 +92,10 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 15px;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+  row-gap: 15px;
 }
 @media (max-width: 767.98px) {
   .header__container {
@@ -124,9 +128,9 @@ a {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-column-gap: 5px;
-     -moz-column-gap: 5px;
-          column-gap: 5px;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
 }
 @media (max-width: 767.98px) {
   .menu-family {
@@ -139,17 +143,26 @@ a {
 .menu-family__item {
   padding: 10px 15px;
   border: 2px solid transparent;
-  text-shadow: -1px -1px black;
+  text-shadow: -2px 1px black;
   font-size: 16px;
   text-transform: uppercase;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .menu-family__item:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
   border: 2px solid rgba(255, 217, 0, 0.568627451);
   border-radius: 3px;
   -webkit-box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.607);
           box-shadow: inset 0px 0px 3px 1px rgba(0, 0, 0, 0.607);
 }
 .menu-family__item.active {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
   background-color: rgba(0, 0, 0, 0.607);
   border: 2px solid rgba(255, 217, 0, 0.568627451);
   border-radius: 3px;
@@ -166,11 +179,17 @@ a {
     padding: 0 15px;
   }
 }
+.main__lords {
+  margin: 50px 0;
+}
+
 .lords {
-  padding: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-column-gap: 40px;
+     -moz-column-gap: 40px;
+          column-gap: 40px;
 }
 @media (max-width: 767.98px) {
   .lords {
@@ -178,6 +197,7 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    row-gap: 30px;
   }
 }
 .lords__names {
@@ -189,7 +209,6 @@ a {
   .lords__names {
     -ms-flex-item-align: center;
         align-self: center;
-    background-color: none;
   }
 }
 .lords__list {
@@ -203,6 +222,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  row-gap: 20px;
 }
 @media (max-width: 767.98px) {
   .lords__list.active {
@@ -224,8 +244,14 @@ a {
   text-transform: uppercase;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(255, 217, 0, 0.568627451);
           box-shadow: 0px 0px 10px 0px rgba(255, 217, 0, 0.568627451);
-  margin-bottom: 20px;
   text-align: center;
+}
+@media (max-width: 767.98px) {
+  .lords__name {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 150px;
+            flex: 1 1 150px;
+  }
 }
 .lords__link {
   display: block;
@@ -233,6 +259,9 @@ a {
   padding: 10px 15px;
   font-size: 16px;
   text-shadow: 1px 1px #000000;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .lords__link:hover {
   border: 2px solid rgba(255, 217, 0, 0.568627451);
@@ -247,10 +276,11 @@ a {
       -ms-flex: 1 1 80%;
           flex: 1 1 80%;
 }
-.lords__info {
+
+.family-lords__info {
   display: none;
 }
-.lords__info.active {
+.family-lords__info.active {
   display: block;
 }
 
@@ -258,11 +288,10 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 -15px;
-  margin-left: 40px;
-}
-.lord > *:not(:last-child) {
-  margin-bottom: 30px;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+  row-gap: 30px;
 }
 @media (max-width: 991.98px) {
   .lord {
@@ -270,19 +299,15 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-left: 10px;
-  }
-}
-@media (max-width: 767.98px) {
-  .lord {
-    margin: 0 0 30px 0;
   }
 }
 .lord__text-block {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 50%;
-          flex: 0 1 50%;
-  margin: 0 15px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 70%;
+          flex: 1 1 70%;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 .lord__text-block > *:not(:last-child) {
   margin-bottom: 30px;
@@ -292,6 +317,9 @@ a {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 }
 @media (max-width: 767.98px) {
@@ -304,20 +332,27 @@ a {
 }
 .lord__title {
   font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
 }
 .lord__image {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 50%;
-          flex: 0 1 50%;
+      -ms-flex: 0 0 30%;
+          flex: 0 0 30%;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  margin: 0 15px;
+  padding: 10px;
   -webkit-box-shadow: 0px 0px 5px 2px rgba(255, 217, 0, 0.568627451);
           box-shadow: 0px 0px 5px 2px rgba(255, 217, 0, 0.568627451);
-  padding: 10px;
 }
-@media (max-width: 991px) {
+@media (max-width: 991.98px) {
   .lord__image {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
     width: 60%;
     -ms-flex-item-align: center;
         align-self: center;
