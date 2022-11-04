@@ -7,7 +7,7 @@ function removeClass(elementName, className) {
 }
 // --------------------------------------------------------------
 
-const familyItems = document.querySelectorAll(".menu-family__item");
+const familyItems = document.querySelectorAll(".menu-family__link");
 const lordsLits = document.querySelectorAll(".lords__list");
 const lordsNames = document.querySelectorAll(".lords__link")
 const lordInfo = document.querySelectorAll(".lord")
@@ -62,8 +62,8 @@ document.addEventListener("click", function(clickItem) {
 
 
 
-// ========== Событие при клике на пункт из меню "семейство" ============================
-   if (currentItem.classList.contains("menu-family__item")) {
+// ========== Событие при клике на ссылку в меню "семейство" ============================
+   if (currentItem.classList.contains("menu-family__link")) {
       
       removeClass(familyItems, "active")
       currentItem.classList.add("active")
