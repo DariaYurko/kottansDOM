@@ -10,7 +10,7 @@ function removeClass(elementName, className) {
 const familyItems = document.querySelectorAll(".menu-family__item");
 const lordsLits = document.querySelectorAll(".lords__list");
 const lordsNames = document.querySelectorAll(".lords__link")
-const lordInfo = document.querySelectorAll(".family-lords__info")
+const lordInfo = document.querySelectorAll(".lord")
 
 const Targarians = "#targarians"
 const Lannisters = "#lannisters"

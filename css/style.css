@@ -277,14 +277,10 @@ a {
           flex: 1 1 80%;
 }
 
-.family-lords__info {
+.lord {
   display: none;
 }
-.family-lords__info.active {
-  display: block;
-}
-
-.lord {
+.lord.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
