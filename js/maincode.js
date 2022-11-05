@@ -1,3 +1,17 @@
+const familyItems = document.querySelectorAll(".menu-family__link");
+const lordsLits = document.querySelectorAll(".lords__list");
+const lordsNames = document.querySelectorAll(".lords__link")
+const lordInfo = document.querySelectorAll(".lord")
+
+const idTtargarians = "#targarians"
+const idLannisters = "#lannisters"
+const idBaratheons = "#baratheons"
+const idStarks = "#starks"
+
+let lordTargarian = 0
+let lordLannister = 0
+let lordBaratheon = 0
+let lordStark = 0
 
 // ----------- Удаление класса -----------------------------------
 function removeClass(elementName, className) {
@@ -5,22 +19,7 @@ function removeClass(elementName, className) {
       item.classList.remove(className)
    })
 }
-// --------------------------------------------------------------
-
-const familyItems = document.querySelectorAll(".menu-family__link");
-const lordsLits = document.querySelectorAll(".lords__list");
-const lordsNames = document.querySelectorAll(".lords__link")
-const lordInfo = document.querySelectorAll(".lord")
-
-const Targarians = "#targarians"
-const Lannisters = "#lannisters"
-const Baratheons = "#baratheons"
-const Starks = "#starks"
-
-let lordTargarian = 0
-let lordLannister = 0
-let lordBaratheon = 0
-let lordStark = 0
+// ---------------------------------------------------------------
 
 document.addEventListener("click", function(clickItem) {
 
@@ -37,21 +36,20 @@ document.addEventListener("click", function(clickItem) {
       removeClass(lordInfo, "active")
       currentLordInfo.classList.add("active")
 
-
       // ---------------------- Запоминаем лорда в переменную ----------------------------
-      if (currentItem.closest("#targarians")) {
+      if (currentItem.closest(idTtargarians)) {
          lordTargarian = currentItem.getAttribute("data-name")
       } 
 
-      if (currentItem.closest("#lannisters")) {
+      if (currentItem.closest(idLannisters)) {
          lordLannister = currentItem.getAttribute("data-name")
       }
       
-      if (currentItem.closest("#baratheons")) {
+      if (currentItem.closest(idBaratheons)) {
          lordBaratheon = currentItem.getAttribute("data-name")
       } 
       
-      if (currentItem.closest("#starks")) {
+      if (currentItem.closest(idStarks)) {
          lordStark = currentItem.getAttribute("data-name")
       }
       // --------------------------------------------------------------------------------
@@ -59,7 +57,6 @@ document.addEventListener("click", function(clickItem) {
       clickItem.preventDefault()
    }
 // ======================================================================================
-
 
 
 // ========== Событие при клике на ссылку в меню "семейство" ============================
@@ -75,14 +72,14 @@ document.addEventListener("click", function(clickItem) {
       
       // ------ Если в семействе выбран лорд, возвращаем его при клике на его семейство ---
       
-      function ifLordWasChoosen(lord, familyName) {
+      function showsLord(lord, familyName) {
          if (familyId === familyName) {
             removeClass(lordInfo, "active")
 
-            lordsNames.forEach(function(i) {
-               let name = i.getAttribute("data-name")              
+            lordsNames.forEach(function(lordName) {
+               let name = lordName.getAttribute("data-name")              
                if (name === lord) {
-                  i.classList.add("active")
+                  lordName.classList.add("active")
                   let info = document.querySelector(lord)
                   info.classList.add("active")
                }
@@ -90,10 +87,10 @@ document.addEventListener("click", function(clickItem) {
          } 
       }
 
-      ifLordWasChoosen(lordTargarian, Targarians)
-      ifLordWasChoosen(lordLannister, Lannisters)
-      ifLordWasChoosen(lordBaratheon, Baratheons)
-      ifLordWasChoosen(lordStark, Starks)
+      showsLord(lordTargarian, idTtargarians)
+      showsLord(lordLannister, idLannisters)
+      showsLord(lordBaratheon, idBaratheons)
+      showsLord(lordStark, idStarks)
 
       clickItem.preventDefault()
    }
