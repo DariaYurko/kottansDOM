@@ -15,17 +15,18 @@ let lordStark = 0
 
 // ----------- Удаление класса -----------------------------------
 function removeClass(elementName, className) {
-   elementName.forEach(function(item) {
+   elementName.forEach(function (item) {
       item.classList.remove(className)
    })
 }
 // ---------------------------------------------------------------
 
-document.addEventListener("click", function(clickItem) {
+document.addEventListener("click", function (clickItem) {
 
    let currentItem = clickItem.target;
 
-// ================= Событие при клике на имя лорда ======================================
+
+   // ================= Событие при клике на имя лорда ======================================
    if (currentItem.classList.contains("lords__link")) {
 
       removeClass(lordsNames, "active")
@@ -39,16 +40,16 @@ document.addEventListener("click", function(clickItem) {
       // ---------------------- Запоминаем лорда в переменную ----------------------------
       if (currentItem.closest(idTtargarians)) {
          lordTargarian = currentItem.getAttribute("data-name")
-      } 
+      }
 
       if (currentItem.closest(idLannisters)) {
          lordLannister = currentItem.getAttribute("data-name")
       }
-      
+
       if (currentItem.closest(idBaratheons)) {
          lordBaratheon = currentItem.getAttribute("data-name")
-      } 
-      
+      }
+
       if (currentItem.closest(idStarks)) {
          lordStark = currentItem.getAttribute("data-name")
       }
@@ -56,35 +57,35 @@ document.addEventListener("click", function(clickItem) {
 
       clickItem.preventDefault()
    }
-// ======================================================================================
+   // ======================================================================================
 
 
-// ========== Событие при клике на ссылку в меню "семейство" ============================
+   // ========== Событие при клике на ссылку в меню "семейство" ============================
    if (currentItem.classList.contains("menu-family__link")) {
-      
+
       removeClass(familyItems, "active")
       currentItem.classList.add("active")
 
       let familyId = currentItem.getAttribute("data-family")
       let curentLordsList = document.querySelector(familyId)
       removeClass(lordsLits, "active")
-      curentLordsList.classList.add("active")  
-      
+      curentLordsList.classList.add("active")
+
       // ------ Если в семействе выбран лорд, возвращаем его при клике на его семейство ---
-      
+
       function showsLord(lord, familyName) {
          if (familyId === familyName) {
             removeClass(lordInfo, "active")
 
-            lordsNames.forEach(function(lordName) {
-               let name = lordName.getAttribute("data-name")              
+            lordsNames.forEach(function (lordName) {
+               let name = lordName.getAttribute("data-name")
                if (name === lord) {
                   lordName.classList.add("active")
                   let info = document.querySelector(lord)
                   info.classList.add("active")
                }
             })
-         } 
+         }
       }
 
       showsLord(lordTargarian, idTtargarians)
@@ -94,5 +95,6 @@ document.addEventListener("click", function(clickItem) {
 
       clickItem.preventDefault()
    }
-// ===========================================================================================
+   // ===========================================================================================
 });
+
