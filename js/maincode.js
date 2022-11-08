@@ -2,6 +2,8 @@ const familyItems = document.querySelectorAll(".menu-family__link");
 const lordsLits = document.querySelectorAll(".lords__list");
 const lordsNames = document.querySelectorAll(".lords__link")
 const lordInfo = document.querySelectorAll(".lord")
+const burgerIcon = document.querySelector(".burger")
+const familyMenu = document.querySelector(".menu-family")
 
 const idTtargarians = "#targarians"
 const idLannisters = "#lannisters"
@@ -24,6 +26,14 @@ function removeClass(elementName, className) {
 document.addEventListener("click", function (clickItem) {
 
    let currentItem = clickItem.target;
+
+   // ================ Событие при клике на бургер ===========================================
+   
+   if (currentItem.closest(".burger")) {
+      familyMenu.classList.toggle("active")
+      burgerIcon.classList.toggle("active")
+   }
+   // =======================================================================================
 
 
    // ================= Событие при клике на имя лорда ======================================
