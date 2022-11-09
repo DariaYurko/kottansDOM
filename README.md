@@ -13,7 +13,9 @@ If you select the appropriate lord from the list of lords, will be displayed tex
 + for screen resolutions less than 992px
 ![example](screenshots/example3.jpg 'menu')
 + for screen resolutions less than 768px
-![example](screenshots/example4.jpg 'menu')
+![example](screenshots/lessthan768.jpg 'menu')
++ for screen resolutions less than 768px with active burger-menu
+![example](screenshots/lessthan768active.jpg 'menu')
 + for mobile devices
 ![example](screenshots/example5.jpg 'menu')
 
