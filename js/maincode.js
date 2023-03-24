@@ -5,7 +5,6 @@ const lordsNames = document.querySelectorAll(".lords__link")
 const lordInfo = document.querySelectorAll(".lord")
 const burgerIcon = document.querySelector(".burger")
 
-
 const idTtargarians = "#targarians"
 const idLannisters = "#lannisters"
 const idBaratheons = "#baratheons"
@@ -39,7 +38,7 @@ document.addEventListener("click", function (clickItem) {
       removeClass(lordInfo, "active")
       currentLordInfo.classList.add("active")
 
-      // ---------------------- Запоминаем лорда в переменную ----------------------------
+      // ---------------------- Присваиваем лорда в переменную ----------------------------
       if (currentItem.closest(idTtargarians)) {
          lordTargarian = currentItem.getAttribute("data-name")
       }
