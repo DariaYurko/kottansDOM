@@ -23,4 +23,4 @@ If you select the appropriate lord from the list of lords, will be displayed tex
 Also in my project I'm using javascript to listen event "click", that assigns the active classes to display the selected information.
 
 ### __Test of app__
-https://dariayurko.github.io/kottans-DOM/
+https://dariayurko.github.io/kottansDOM/
